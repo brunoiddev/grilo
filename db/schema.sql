@@ -12,21 +12,32 @@ CREATE TABLE acesso (
 	PRIMARY KEY(id)
 )ENGINE=InnoDB;
 
-CREATE TABLE usuarios (
+CREATE TABLE user (
 	id INT NOT NULL AUTO_INCREMENT,
-    acessoId INT NOT NULL,
+    acesso_id INT NOT NULL,
 	nome CHAR(64) NOT NULL,
 	email CHAR(64) NOT NULL,
 	senha CHAR(32) NULL,
 	ativo INT(1) NOT NULL,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id),
+	FOREIGN KEY (acesso_id) 
+        REFERENCES acesso(id)
+        ON DELETE RESTRICT
 )ENGINE=InnoDB;
 
-ALTER TABLE usuarios
-ADD FOREIGN KEY fk_usuarios_acesso(acessoId)
-REFERENCES acesso(id)
-ON DELETE RESTRICT;
+-- tipo: 1 registrar, 2 recuperar
+CREATE TABLE user_token(
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	data DATETIME NOT NULL,
+	tipo INT(1) NOT NULL,ativo INT(1) NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY (user_id) 
+        REFERENCES user(id)
+        ON DELETE CASCADE
+)ENGINE=InnoDB;
 
 -- INSERTS
+INSERT INTO acesso (acesso) VALUES ('brunoid');
 INSERT INTO acesso (acesso) VALUES ('administrador');
-INSERT INTO acesso (acesso) VALUES ('comum');
+INSERT INTO acesso (acesso) VALUES ('representante');
