@@ -10,6 +10,6 @@ class User {
 	public $ativo;
 
 	public function __construct() {
-		echo "construtor de user<br>";
+		//echo "construtor de user<br>";
 	}
 }

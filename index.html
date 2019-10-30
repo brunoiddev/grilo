@@ -1,29 +1,19 @@
 <?php
 require_once('model/db.php');
 require_once('model/user.php');
+require_once("util/layout.php");
+
+$db = new Db();
+
+$stmt = $db->query('SELECT acesso FROM acesso');
+while ($row = $stmt->fetch())
+{
+    $data['acesso'][] = $row['acesso'] . "<br>";
+}
+$data[0]['nome'] = 'brunoid';
+$data[1]['nome'] = 'vader';
+$layout = new Layout('main', 'index_view', $data);
 ?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Luz Sollar Lab</title>
-		<link rel="stylesheet" type="text/css" href="public/css/main.css">
-	</head>
-	<body>
-		<?php
-		echo "Hello grilo<br><br>";
 
-		$db = new Db();
-		$user = new User();
-
-		$stmt = $db->query('SELECT acesso FROM acesso');
-		while ($row = $stmt->fetch())
-		{
-		    echo $row['acesso'] . "<br>";
-		}
-
-		?>
-	</body>
-</html>
+		
 

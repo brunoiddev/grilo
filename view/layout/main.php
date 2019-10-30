@@ -6,6 +6,23 @@
 		<link rel="stylesheet" type="text/css" href="public/css/main.css">
 	</head>
 	<body>
-		<?php include_once('view/' . $page . '.php');?>
+		<div class="top_bar">
+			<div class="container">
+				<div class="logo">
+					<img src="public/img/badge2.png"/>
+				</div>
+				<div class="menu">
+					<a href="#">item 1</a>
+					<a href="#">item 2</a>
+					<a href="#">item 3</a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container">
+			<h1>Hello fucker</h1>
+			<?php include_once('view/' . $page . '.php');?>
+			</div>
+		</div>
 	</body>
 </html>
