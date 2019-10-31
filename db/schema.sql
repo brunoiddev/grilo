@@ -40,6 +40,7 @@ CREATE TABLE user_token(
 
 CREATE TABLE produto(
 	id INT NOT NULL AUTO_INCREMENT,
+	descricao CHAR(32) NOT NULL,
 	PRIMARY KEY(id)
 )ENGINE=InnoDB;
 

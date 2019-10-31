@@ -1,0 +1,8 @@
+<?php
+include_once("util/layout.php");
+$data = null;
+if($_POST) {
+	$data = $_POST;
+}
+$layout = new Layout('main', 'auth/login_view', $data);
+?>

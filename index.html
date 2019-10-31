@@ -1,7 +1,7 @@
 <?php
 require_once('model/db.php');
 require_once('model/user.php');
-require_once("util/layout.php");
+require_once('util/layout.php');
 
 $db = new Db();
 
@@ -12,7 +12,7 @@ while ($row = $stmt->fetch())
 }
 $data[0]['nome'] = 'brunoid';
 $data[1]['nome'] = 'vader';
-$layout = new Layout('main', 'teste_view', $data);
+$layout = new Layout('main', 'index_view', $data);
 ?>
 
 		

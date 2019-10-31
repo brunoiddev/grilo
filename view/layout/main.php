@@ -20,7 +20,7 @@
 		</div>
 		<div class="content">
 			<div class="container">
-			<h1>Hello fucker</h1>
+			<!-- carrega página de conteúdo -->
 			<?php include_once('view/' . $page . '.php');?>
 			</div>
 		</div>
