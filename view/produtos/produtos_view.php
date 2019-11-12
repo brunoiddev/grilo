@@ -13,7 +13,7 @@
 		<?php for($i=0; $i<sizeof($data); $i++) { ?>
 		<tr>
 			<td><?=$data[$i]->id?></td>
-			<td><?=$data[$i]->codigo?></td>
+			<td><a href="produto.html?id=<?=$data[$i]->id?>"><?=$data[$i]->codigo?></a></td>
 			<td><?=$data[$i]->descricao?></td>
 		</tr>
 		<?php } ?>
