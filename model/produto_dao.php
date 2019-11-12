@@ -66,6 +66,41 @@ class ProdutoDao {
 
 		return $p;
 	}
+
+	// salva produto
+	public function save($produto) {
+		$sql = "INSERT INTO produto (cod, descricao, categoria_id, modelo_id) VALUES('$p->codigo', '$p->descricao', $p->categoria_id, $p->modelo_id)";
+	}
+
+	// métodos auxiliares
+
+	// busca categorias e retorna array
+	public function categorias() {
+
+		$db = new Db;
+		$sql = 'SELECT id, categoria FROM categoria';
+		$stmt = $db->query($sql);
+		$categorias = array();
+		while ($row = $stmt->fetch())
+		{
+		    $categorias[] = $row;
+		}
+		return $categorias;
+	}
+
+	// busca modelos e retorna array
+	public function modelos() {
+
+		$db = new Db;
+		$sql = 'SELECT id, modelo FROM modelo';
+		$stmt = $db->query($sql);
+		$modelos = array();
+		while ($row = $stmt->fetch())
+		{
+		    $modelos[] = $row;
+		}
+		return $modelos;
+	}
 	
 }
 ?>

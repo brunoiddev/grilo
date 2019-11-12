@@ -83,6 +83,12 @@ INSERT INTO acesso (acesso) VALUES ('administrador');
 INSERT INTO acesso (acesso) VALUES ('representante');
 
 INSERT INTO categoria (categoria) VALUES ('Super LED');
+INSERT INTO categoria (categoria) VALUES ('LED');
+INSERT INTO categoria (categoria) VALUES ('Acessórios');
+
 INSERT INTO modelo (modelo) VALUES ('3U');
+INSERT INTO modelo (modelo) VALUES ('2U');
+INSERT INTO modelo (modelo) VALUES ('tubular');
+
 INSERT INTO produto (categoria_id, modelo_id, codigo, descricao) VALUES (1, 1, '1234', 'lâmpada de teste');
-INSERT INTO produto (categoria_id, modelo_id, codigo, descricao) VALUES (1, 1, '2345', 'lâmpada noturna');
+INSERT INTO produto (categoria_id, modelo_id, codigo, descricao) VALUES (1, 3, '2345', 'lâmpada noturna');

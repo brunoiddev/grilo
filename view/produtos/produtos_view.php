@@ -1,5 +1,9 @@
 <h1>produtos view</h1>
 
+<a href="produto_new.html">novo produto</a>
+<br>
+<br>
+
 <table>
 	<thead>
 		<tr>

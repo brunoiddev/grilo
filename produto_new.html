@@ -1,0 +1,13 @@
+<?php
+include_once("util/layout.php");
+include_once("controller/produto_controller.php");
+$ctl = new ProdutoController;
+$data['categorias'] = $ctl->categorias();
+$data['modelos'] = $ctl->modelos();
+
+if (isset($_POST)) {
+	$ctl->new();
+}
+
+$layout = new Layout('main', 'produtos/produto_new_view', $data);
+?>
