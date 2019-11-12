@@ -38,13 +38,51 @@ CREATE TABLE user_token(
         ON DELETE CASCADE
 )ENGINE=InnoDB;
 
+-- modelos de protudos
+CREATE TABLE modelo (
+	id INT NOT NULL AUTO_INCREMENT,
+	modelo CHAR(32) NOT NULL,
+	PRIMARY KEY(id)
+)ENGINE=InnoDB;
+
+-- categorias de produtos
+CREATE TABLE categoria (
+	id INT NOT NULL AUTO_INCREMENT,
+	categoria CHAR(32) NOT NULL,
+	PRIMARY KEY(id)
+)ENGINE=InnoDB;
+
 CREATE TABLE produto(
 	id INT NOT NULL AUTO_INCREMENT,
+	codigo CHAR(6) NOT NULL,
+	categoria_id INT NOT NULL,
+	modelo_id INT NOT NULL,
+	tensao CHAR(10),
+	potencia CHAR(10),
+	cor CHAR(10),
+	bocal CHAR (10),
+	lumens CHAR(10),
+	qtd_caixa INT,
+	preco_unitario INT,
+	preco_caixa INT,
+	preco_master INT,
+	parent_id INT,
 	descricao CHAR(32) NOT NULL,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id),
+	FOREIGN KEY (categoria_id) 
+        REFERENCES categoria(id)
+        ON DELETE RESTRICT,
+    FOREIGN KEY (modelo_id) 
+        REFERENCES modelo(id)
+        ON DELETE RESTRICT
 )ENGINE=InnoDB;
 
 -- INSERTS
 INSERT INTO acesso (acesso) VALUES ('brunoid');
 INSERT INTO acesso (acesso) VALUES ('administrador');
 INSERT INTO acesso (acesso) VALUES ('representante');
+
+INSERT INTO categoria (categoria) VALUES ('Super LED');
+INSERT INTO modelo (modelo) VALUES ('3U');
+INSERT INTO produto (categoria_id, modelo_id, codigo, descricao) VALUES (1, 1, '1234', 'lâmpada de teste');
+INSERT INTO produto (categoria_id, modelo_id, codigo, descricao) VALUES (1, 1, '2345', 'lâmpada noturna');

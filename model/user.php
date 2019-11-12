@@ -13,3 +13,5 @@ class User {
 		//echo "construtor de user<br>";
 	}
 }
+
+?>

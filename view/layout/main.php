@@ -12,9 +12,9 @@
 					<img src="public/img/badge2.png"/>
 				</div>
 				<div class="menu">
-					<a href="#">item 1</a>
-					<a href="#">item 2</a>
-					<a href="#">item 3</a>
+					<a href="/">home</a>
+					<a href="produtos.html">produtos</a>
+					<a href="login.html">login</a>
 				</div>
 			</div>
 		</div>

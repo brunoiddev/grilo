@@ -1,0 +1,7 @@
+<?php
+include_once("util/layout.php");
+include_once("controller/produto_controller.php");
+$ctl = new ProdutoController;
+$data = $ctl->produtos();
+$layout = new Layout('main', 'produtos/produtos_view', $data);
+?>
